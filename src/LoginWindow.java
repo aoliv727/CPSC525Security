@@ -89,7 +89,7 @@ public class LoginWindow {
 	 * Create test users and gives them a password image */
 	private void createUsers()
 	{
-		users = new Client[3];
+		users = new Client[4];
 		
 		Client user0 = new Client("Satara", "src//rsz_three.jpg");
 		users[0] = user0;
@@ -99,6 +99,9 @@ public class LoginWindow {
 		
 		Client user2 = new Client("Hannah", "src//rsz_one.jpg");
 		users[2] = user2;
+		
+		Client user3 = new Client("Brad", "src//ezPassword.jpg");
+		users[3] = user3;
 	}
 	
 
