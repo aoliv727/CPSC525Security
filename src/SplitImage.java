@@ -9,7 +9,11 @@ import javax.imageio.ImageIO;
 
 /* SplitImage: Takes image path and returns Array of image chunks */
 public class SplitImage {
+	
 	private String filePath;
+	// Max sizes that will comfortably fit on screen
+	public static final int MAXWIDTH = 1365;  
+	public static final int MAXHEIGHT = 645;  
 
 	/* SplitImage Constructor */
 	public SplitImage(String filePath) {
@@ -24,8 +28,11 @@ public class SplitImage {
         BufferedImage image = null;
         
 		try {
+			
 			fileIn = new FileInputStream(file);
 			image = ImageIO.read(fileIn); //reading the image file
+			image = resizeImage(image);   //resize for large images
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -54,6 +61,35 @@ public class SplitImage {
         }
         
         return imgs;
+	}
+	
+	private BufferedImage resizeImage(BufferedImage original)
+	{
+		BufferedImage resizedImage = null;
+		int newWidth = 0;
+		int newHeight = 0;
+		
+		
+		if(original.getWidth() > MAXWIDTH)
+		{
+			newWidth = MAXWIDTH;
+		}
+		else
+			newWidth = original.getWidth();
+	
+		
+		if(original.getHeight() > MAXHEIGHT)
+			newHeight = MAXHEIGHT;
+		else
+			newHeight = original.getHeight();
+		
+		
+		resizedImage = new BufferedImage(newWidth, newHeight, original.getType());
+		Graphics2D gr = resizedImage.createGraphics();
+		gr.drawImage(original, 0, 0, newWidth, newHeight, null);
+		gr.dispose();
+		
+		return resizedImage;
 	}
 	
 }

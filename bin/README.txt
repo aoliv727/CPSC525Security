@@ -31,9 +31,9 @@
   
   -> 4x4 password space is hardcoded even though images can be split into
   	 more chunks
-  -> Optimal image size is 784x415 pixels
-  		--> Can do smaller images but larger images will
-  			not be displayed properly
+  -> Optimal image size is 1365x645 pixels
+  		--> Program auto scales larger images for optimal viewing
+  		--> Smaller images remain the same (unstretched for optimal viewing)
 
   	 
 

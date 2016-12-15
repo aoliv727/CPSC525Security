@@ -72,7 +72,7 @@ public class LoginAs {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				/* Start LoginWindow and initialize with username */		
-				LoginWindow window = new LoginWindow(usernameTextField.getText());
+				ResizeScramble window = new ResizeScramble(usernameTextField.getText());
 				window.getFrmImageSegmentationPassword().setVisible(true);
 				
 			}
