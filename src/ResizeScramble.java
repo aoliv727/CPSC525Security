@@ -90,13 +90,13 @@ private JFrame frmImageSegmentationPassword;
 	{
 		users = new Client[4];
 		
-		Client user0 = new Client("Satara", "src//large02.jpg");
+		Client user0 = new Client("Satara", "C:\\Users\\Abigail\\Downloads\\rsz_four(1).jpg");//"src//large02.jpg");
 		users[0] = user0;
 		
 		Client user1 = new Client("Abigail", "src//exactFitEZ.jpg");
 		users[1] = user1;
 		
-		Client user2 = new Client("Hannah", "src//large01.jpg");
+		Client user2 = new Client("Hannah", "C:\\Users\\Abigail\\Downloads\\rsz_large01.jpg");//"src//large01.jpg");
 		users[2] = user2;
 		
 		Client user3 = new Client("Brad", "src//smallEZPassword.jpg");
